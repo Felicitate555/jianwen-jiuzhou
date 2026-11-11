@@ -1,98 +1,35 @@
-## 介绍
+# 剑问九州
 
-项目介绍
+**以指为剑，在水墨江湖中开启一段修行。**
 
-## 目录结构
+《剑问九州》是一款修仙题材的网页动作游戏。玩家可以使用摄像头手势或鼠标挥剑，学习剑招、迎战妖兽，并通过剧情抉择塑造自己的修行经历。
 
-```
-├── README.md # 说明文档
-├── components.json # 组件库配置
-├── index.html # 入口文件
-├── package.json # 包管理
-├── postcss.config.js # postcss 配置
-├── public # 静态资源目录
-│   ├── favicon.png # 图标
-│   └── images # 图片资源
-├── src # 源码目录
-│   ├── App.tsx # 入口文件
-│   ├── components # 组件目录
-│   ├── contexts # 上下文目录
-│   ├── db # 数据库配置目录
-│   ├── hooks # 通用钩子函数目录
-│   ├── index.css # 全局样式
-│   ├── layout # 布局目录
-│   ├── lib # 工具库目录
-│   ├── main.tsx # 入口文件
-│   ├── routes.tsx # 路由配置
-│   ├── pages # 页面目录
-│   ├── services  # 数据库交互目录
-│   ├── types   # 类型定义目录
-├── tsconfig.app.json  # ts 前端配置文件
-├── tsconfig.json # ts 配置文件
-├── tsconfig.node.json # ts node端配置文件
-└── vite.config.ts # vite 配置文件
+## 作品特色
+
+- **以手挥剑**：MediaPipe 手部追踪驱动剑尖和剑痕，也支持鼠标操作。
+- **修习剑招**：通过轨迹学习斜劈、十字剑与回风式，在战斗中运用。
+- **战斗与成长**：从山狼、远程妖修到赤瞳山魈，体验练剑、战斗和章节成长。
+- **剧情与选择**：结合人生记录和 AI 叙事，为不同抉择生成故事；AI 服务需要单独配置。
+- **水墨演出**：开场、敌人登场与小飞剑等视觉元素共同呈现修仙氛围。
+
+## 快速开始
+
+需要 Node.js 20 或更新版本及 npm：
+
+```bash
+npm install
+npm run dev
 ```
 
-## 技术栈
+打开终端提示的本地地址。摄像头模式需要浏览器授权；也可以选择鼠标模式。AI 功能需参考项目中的环境变量示例和 `docs/` 配置，未配置时不应期待真实 AI 响应。
 
-Vite、TypeScript、React、Supabase
+## 技术与目录
 
-## 本地开发
+React、TypeScript、Vite、MediaPipe、Supabase；游戏逻辑位于 `src/`，服务端代理位于 `server/`，测试位于 `tests/`。
 
-### 如何在本地编辑代码？
-
-您可以选择 [VSCode](https://code.visualstudio.com/Download) 或者您常用的任何 IDE 编辑器，唯一的要求是安装 Node.js 和 npm.
-
-### 环境要求
-
-```
-# Node.js ≥ 20
-# npm ≥ 10
-例如：
-# node -v   # v20.18.3
-# npm -v    # 10.8.2
+```bash
+npm run build       # 类型检查并构建
+npm test            # 运行测试
 ```
 
-具体安装步骤如下：
-
-### 在 Windows 上安装 Node.js
-
-```
-# Step 1: 访问Node.js官网：https://nodejs.org/，点击下载后，会根据你的系统自动选择合适的版本（32位或64位）。
-# Step 2: 运行安装程序：下载完成后，双击运行安装程序。
-# Step 3: 完成安装：按照安装向导完成安装过程。
-# Step 4: 验证安装：在命令提示符（cmd）或IDE终端（terminal）中输入 node -v 和 npm -v 来检查 Node.js 和 npm 是否正确安装。
-```
-
-### 在 macOS 上安装 Node.js
-
-```
-# Step 1: 使用Homebrew安装（推荐方法）：打开终端。输入命令brew install node并回车。如果尚未安装Homebrew，需要先安装Homebrew，
-可以通过在终端中运行如下命令来安装：
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-或者使用官网安装程序：访问Node.js官网。下载macOS的.pkg安装包。打开下载的.pkg文件，按照提示完成安装。
-# Step 2: 验证安装：在命令提示符（cmd）或IDE终端（terminal）中输入 node -v 和 npm -v 来检查 Node.js 和 npm 是否正确安装。
-```
-
-### 安装完后按照如下步骤操作：
-
-```
-# Step 1: 下载代码包
-# Step 2: 解压代码包
-# Step 3: 用IDE打开代码包，进入代码目录
-# Step 4: IDE终端输入命令行，安装依赖：npm i
-# Step 5: IDE终端输入命令行，启动开发服务器：npm run dev -- --host 127.0.0.1
-```
-
-### 如何开发后端服务？
-
-配置环境变量，安装相关依赖
-如需使用数据库，请使用 supabase 官方版本或自行部署开源版本的 Supabase
-
-### 如何配置应用中的三方 API？
-
-具体三方 API 调用方法，请参考帮助文档：[源码导出](https://cloud.baidu.com/doc/MIAODA/s/Xmewgmsq7)，了解更多详细内容。
-
-## 了解更多
-
-您也可以查看帮助文档：[源码导出](https://cloud.baidu.com/doc/MIAODA/s/Xmewgmsq7)，了解更多详细内容。
+这是开发中的游戏作品，当前仓库提供源码与本地运行方式；尚无可用的独立试玩链接。
